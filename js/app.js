@@ -13,7 +13,7 @@ const loadPhone = searchText =>{
 
   fetch(url)
   .then(res => res.json())
-  .then(data => displayPhone(data.data))
+  .then(data => displayPhone(data.data.slice(0, 20)))
 
 }
 
@@ -32,7 +32,6 @@ const displayPhone = phones =>{
   const detailsDiv = document.getElementById('details-div');
   detailsDiv.textContent = '';
   
-  if(phones.length ){
   phones.forEach(phone =>{
     // console.log(phone);
     const div = document.createElement('div');
@@ -49,7 +48,7 @@ const displayPhone = phones =>{
     `;
     phonesContainer.appendChild(div);
   })
-}
+
   
 }
 
