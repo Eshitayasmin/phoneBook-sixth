@@ -13,7 +13,7 @@ const loadPhone = searchText =>{
 
   fetch(url)
   .then(res => res.json())
-  .then(data => displayPhone(data.data.slice(0, 20)))
+  .then(data => displayPhone(data.data))
 
 }
 
@@ -32,7 +32,8 @@ const displayPhone = phones =>{
   const detailsDiv = document.getElementById('details-div');
   detailsDiv.textContent = '';
   
-  phones.forEach(phone =>{
+  const phoneSection = phones.slice(0, 20);
+  phoneSection.forEach(phone =>{
     // console.log(phone);
     const div = document.createElement('div');
     div.classList.add("search-result", "col-12", "col-md-4");
