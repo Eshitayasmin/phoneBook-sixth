@@ -16,6 +16,10 @@
     font-weight: 700;
 }
 
+#spinner{
+    display: none;
+}
+
 #no-results{
     display: none;
 }
@@ -49,7 +53,7 @@
     background-color: rgba(173, 216, 230, 0.199);
     border: 2px solid lightblue;
     padding: 15px;
-    width: 40vw;
+    /* width: 40vw; */
     margin-bottom: 30px;
 }
 .property{

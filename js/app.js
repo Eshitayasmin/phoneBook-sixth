@@ -1,4 +1,4 @@
-
+ 
 const searchPhone = () => {
   const searchText = document.getElementById('search-field').value;  
   loadPhone(searchText);
@@ -14,6 +14,9 @@ const loadPhone = searchText =>{
   fetch(url)
   .then(res => res.json())
   .then(data => displayPhone(data.data))
+  
+  //show spinner
+  document.getElementById('spinner').style.display = 'block';
 
 }
 
@@ -49,6 +52,9 @@ const displayPhone = phones =>{
     `;
     phonesContainer.appendChild(div);
   })
+  
+  //close spinner
+  document.getElementById('spinner').style.display = 'none';
 
   
 }
@@ -63,23 +69,21 @@ const loadDetails = phoneId =>{
 }
 
 const displayDetails = details =>{
-  // console.log(details);
-
   const detailsDiv = document.getElementById('details-div');
   detailsDiv.textContent = '';
   const div = document.createElement('div');
-  div.classList.add("col-12", "detail-div", "mx-auto",);
+  div.classList.add("col-11", "col-md-6", "detail-div", "mx-auto");
   div.innerHTML =`
   <img src="${details.image}" class="img-fluid mb-1" alt="">
   <h3>Name: ${details.name}</h3>
   <h6 class="mb-2">Release Date: ${details.releaseDate ? details.releaseDate  : 'no release date found'}</h6>
   <h5>Main Features:</h5>
-  <p><h6 class="d-inline">ChipSet: </h6>${details.mainFeatures.chipSet}</p>
-  <p><h6 class="d-inline">Display size: </h6>${details.mainFeatures.displaySize}</p>
-  <p><h6 class="d-inline">Memory: </h6> ${details.mainFeatures.memory}</p>
-  <p><h6 class="d-inline">Storage: </h6> ${details.mainFeatures.storage}</p>
+  <p><h6 class="d-inline">ChipSet: </h6>${details?.mainFeatures?.chipSet ? details?.mainFeatures?.chipSet : 'no result'}</p>
+  <p><h6 class="d-inline">Display size: </h6>${details?.mainFeatures?.displaySize ? details?.mainFeatures?.displaySize : 'no result'}</p>
+  <p><h6 class="d-inline">Memory: </h6> ${details?.mainFeatures?.memory ? details?.mainFeatures?.memory : 'no result'}</p>
+  <p><h6 class="d-inline">Storage: </h6> ${details?.mainFeatures?.storage ? details?.mainFeatures?.storage : 'no result'}</p>
 
-  <p><h5 class="d-inline">Sensors: </h5> ${details.mainFeatures.sensors.slice(0, 2)}, ${details.mainFeatures.sensors.slice(3, 4)}, ${details.mainFeatures.sensors.slice(4, 5)}, ${details.mainFeatures.sensors.slice(5, 6)}, ${details.mainFeatures.sensors.slice(6, 7)} ${details.mainFeatures.sensors.slice(7, 8)}</p>
+   <p><h5 class="d-inline">Sensors: </h5> ${details?.mainFeatures?.sensors.map(x => x + ' ') ? details?.mainFeatures?.sensors : 'no result'}</p>
 
   <h5>Others:</h5>
   <p><h6 class="property">Bluetooth: </h6> ${details?.others?.Bluetooth ? details?.others?.Bluetooth : 'no result'}</p>
@@ -92,4 +96,10 @@ const displayDetails = details =>{
   `;
   detailsDiv.appendChild(div);
 
+
 }
+
+
+
+
+
