@@ -75,10 +75,15 @@ const displayDetails = details =>{
   const div = document.createElement('div');
   div.classList.add("col-11", "col-md-6", "detail-div", "mx-auto");
   div.innerHTML =`
-  <img src="${details.image}" class="img-fluid mb-1" alt="">
+  <div class="text-center mb-3">
+  <img src="${details.image}" class="w-50" mb-1" alt="">
+  </div>
+  <div class="text-center mb-4">
   <h4>Name: ${details.name}</h4>
   <h5>Brand : ${details.brand}</h5>
   <h6 class="mb-2 release-date">Release Date: ${details.releaseDate ? details.releaseDate  : 'no release date found'}</h6>
+ </div>
+
   <h5 class="feature-title">Main Features</h5>
   <p><h6 class="property">ChipSet: </h6> ${details?.mainFeatures?.chipSet ? details?.mainFeatures?.chipSet : 'no result'}</p>
   <p><h6 class="property">Display size: </h6> ${details?.mainFeatures?.displaySize ? details?.mainFeatures?.displaySize : 'no result'}</p>
