@@ -42,7 +42,7 @@ const displayPhone = phones =>{
     div.classList.add("search-result", "col-12", "col-md-4");
     div.innerHTML = `
     <div class="card">
-    <img src="${phone.image}" class="card-img-top img-fluid mx-auto mt-1" alt="">
+    <img src="${phone.image}" class="card-img-top img-fluid mx-auto" alt="">
     <div class="card-body">
       <h4>Name: ${phone.phone_name}</h4>
       <h5>Brand: ${phone.brand}</h5>
@@ -77,16 +77,16 @@ const displayDetails = details =>{
   div.innerHTML =`
   <img src="${details.image}" class="img-fluid mb-1" alt="">
   <h3>Name: ${details.name}</h3>
-  <h6 class="mb-2">Release Date: ${details.releaseDate ? details.releaseDate  : 'no release date found'}</h6>
-  <h5>Main Features:</h5>
-  <p><h6 class="d-inline">ChipSet: </h6>${details?.mainFeatures?.chipSet ? details?.mainFeatures?.chipSet : 'no result'}</p>
-  <p><h6 class="d-inline">Display size: </h6>${details?.mainFeatures?.displaySize ? details?.mainFeatures?.displaySize : 'no result'}</p>
-  <p><h6 class="d-inline">Memory: </h6> ${details?.mainFeatures?.memory ? details?.mainFeatures?.memory : 'no result'}</p>
-  <p><h6 class="d-inline">Storage: </h6> ${details?.mainFeatures?.storage ? details?.mainFeatures?.storage : 'no result'}</p>
+  <h6 class="mb-2 release-date">Release Date: ${details.releaseDate ? details.releaseDate  : 'no release date found'}</h6>
+  <h5 class="feature-title">Main Features</h5>
+  <p><h6 class="property">ChipSet: </h6> ${details?.mainFeatures?.chipSet ? details?.mainFeatures?.chipSet : 'no result'}</p>
+  <p><h6 class="property">Display size: </h6> ${details?.mainFeatures?.displaySize ? details?.mainFeatures?.displaySize : 'no result'}</p>
+  <p><h6 class="property">Memory: </h6> ${details?.mainFeatures?.memory ? details?.mainFeatures?.memory : 'no result'}</p>
+  <p><h6 class="property">Storage: </h6> ${details?.mainFeatures?.storage ? details?.mainFeatures?.storage : 'no result'}</p>
 
-   <p><h5 class="d-inline">Sensors: </h5> ${details?.mainFeatures?.sensors.map(x => x + ' ') ? details?.mainFeatures?.sensors : 'no result'}</p>
+  <p><h5 class="property">Sensors: </h5> ${details.mainFeatures.sensors.slice(0, 1)}, ${details.mainFeatures.sensors.slice(1, 2)}, ${details.mainFeatures.sensors.slice(3, 4)}, ${details.mainFeatures.sensors.slice(4, 5)}, ${details.mainFeatures.sensors.slice(5, 6)}, ${details.mainFeatures.sensors.slice(6, 7)} ${details.mainFeatures.sensors.slice(7, 8)}</p>
 
-  <h5>Others:</h5>
+  <h5 class="feature-title">Others Features</h5>
   <p><h6 class="property">Bluetooth: </h6> ${details?.others?.Bluetooth ? details?.others?.Bluetooth : 'no result'}</p>
   <p><h6 class="property">GPS: </h6> ${details?.others?.GPS ? details?.others?.GPS: 'no result'}</p>
   <p><h6 class="property">NFC: </h6> ${details?.others?.NFC ? details?.others?.NFC : 'no result'}</p>

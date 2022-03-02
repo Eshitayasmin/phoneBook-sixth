@@ -3,14 +3,14 @@
     color: rgba(100, 148, 237, 0.856);
 }
 .input-field{
-    width: 40vw;
+    width: 50vw;
 }
 .field{
     padding: 6px;
     border: 1px solid lightblue;
 }
 .search-button{
-    background-color: rgba(255, 250, 205, 0.582);
+    background-color: rgba(240, 128, 128, 0.068);
     color: rgba(100, 148, 237, 0.774);
     font-size: 16px;
     font-weight: 700;
@@ -26,18 +26,17 @@
 
 
 #phones{
-    border-radius: 10px;
-    margin-bottom: 50px;
-   }
-.search-result{
-    padding: auto;
-   
-}
-.card{
     background-color: rgba(173, 216, 230, 0.199);
-    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+   }
+
+.card{
+    padding: 20px 10px;
     border: none;
     border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px;
 }
 
 .details-button{
@@ -50,13 +49,23 @@
 }
 
 .detail-div{
-    background-color: rgba(173, 216, 230, 0.199);
-    border: 2px solid lightblue;
+    background-color: rgba(240, 128, 128, 0.068);
+    border: 1px solid lightblue;
     padding: 15px;
-    /* width: 40vw; */
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 .property{
     display: inline-block;
+    color: orangered;
 
+}
+.feature-title{
+    color: blue;
+    text-align: center;
+    font-size: 23px;
+}
+.release-date{
+    color: yellowgreen;
+    font-weight: 600;
+   
 }
