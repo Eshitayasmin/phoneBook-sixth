@@ -76,7 +76,8 @@ const displayDetails = details =>{
   div.classList.add("col-11", "col-md-6", "detail-div", "mx-auto");
   div.innerHTML =`
   <img src="${details.image}" class="img-fluid mb-1" alt="">
-  <h3>Name: ${details.name}</h3>
+  <h4>Name: ${details.name}</h4>
+  <h5>Brand : ${details.brand}</h5>
   <h6 class="mb-2 release-date">Release Date: ${details.releaseDate ? details.releaseDate  : 'no release date found'}</h6>
   <h5 class="feature-title">Main Features</h5>
   <p><h6 class="property">ChipSet: </h6> ${details?.mainFeatures?.chipSet ? details?.mainFeatures?.chipSet : 'no result'}</p>
