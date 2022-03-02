@@ -69,6 +69,7 @@ const loadDetails = phoneId =>{
 }
 
 const displayDetails = details =>{
+  window.scrollTo(0,0);
   const detailsDiv = document.getElementById('details-div');
   detailsDiv.textContent = '';
   const div = document.createElement('div');
